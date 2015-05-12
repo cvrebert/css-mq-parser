@@ -58,4 +58,4 @@ License & Acknowledgements
 
 This project is a fork of [css-mediaquery](https://www.npmjs.com/package/css-mediaquery).
 This software is free to use under the Yahoo! Inc. BSD license.
-See the [LICENSE file](https://github.com/cvrebert/css-mq-parser/blob/master/LICENSE) for license text and copyright information.
+See the [LICENSE file](https://github.com/cvrebert/css-mq-parser/blob/master/LICENSE.txt) for license text and copyright information.
