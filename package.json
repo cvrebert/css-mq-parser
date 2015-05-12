@@ -4,7 +4,12 @@
   "description": "Parses CSS media queries",
   "main": "index.js",
   "scripts": {
-    "test": "istanbul cover -- ./node_modules/mocha/bin/_mocha test/ --reporter spec"
+    "unit": "istanbul cover -- ./node_modules/mocha/bin/_mocha test/ --reporter spec",
+    "eslint": "eslint *.js test/",
+    "jshint": "jshint *.js test/",
+    "jscs": "jscs *.js test/",
+    "lint": "npm run jshint && npm run eslint && npm run jscs",
+    "test": "npm run lint && npm run unit"
   },
   "repository": {
     "type": "git",
@@ -31,8 +36,12 @@
   },
   "homepage": "https://github.com/cvrebert/css-mq-parser",
   "devDependencies": {
-    "mocha": "~1.16.2",
     "chai": "~1.8.1",
-    "istanbul": "~0.2.3"
+    "eslint": "^0.21.0",
+    "istanbul": "~0.2.3",
+    "jscs": "^1.13.1",
+    "jscs-jsdoc": "^1.0.1",
+    "jshint": "^2.7.0",
+    "mocha": "~1.16.2"
   }
 }
