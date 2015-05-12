@@ -1,12 +1,11 @@
-CSS Media Query
+CSS Media Query Parser
 ===============
 
 [![Build Status](https://travis-ci.org/cvrebert/css-mq-parser.png?branch=master)](https://travis-ci.org/cvrebert/css-mq-parser)
 [![Dependency Status](https://gemnasium.com/cvrebert/css-mq-parser.png)](https://gemnasium.com/cvrebert/css-mq-parser)
 [![npm Version](https://badge.fury.io/js/css-mq-parser.png)](https://npmjs.org/package/css-mq-parser)
 
-Parses and determines if a given CSS Media Query matches a set of values via
-JavaScript.
+Parses CSS media query expressions.
 
 Installation
 ------------
@@ -20,28 +19,8 @@ $ npm install css-mq-parser
 Usage
 -----
 
-This package has two exports: `parse()`, and `match()` which can parse CSS Media
-Queries and determine if a media query matches a given set of values.
-
-### Matching
-
-The `match()` method lets you compare a media query expression with a JavaScript
-object and determine if a media query matches a given set of values.
-
-```javascript
-var mediaQuery = require('css-mq-parser');
-
-var isMatch = mediaQuery.match('screen and (min-width: 40em)', {
-    type : 'screen',
-    width: '1024px'
-});
-
-console.log(isMatch); // => true
-```
-
-The values specified to check a media query string against should be thought of
-as if they are the current state of a device/browser. A `type` value _must_ be
-specified, and it can _not_ be `"all"`.
+This package has one export: `parse()`, which can parse CSS media
+query expressions.
 
 ### Parsing
 
@@ -73,22 +52,10 @@ The `ast` variable will have the following payload:
 ]
 ```
 
-This package was written with care to following the W3C Recommendations for
-[CSS3 Media Queries][w3c-mq] and [CSS3 Values and Units][w3c-vu]. It supports
-all of the [Media Features][w3c-mq-features] and will properly convert values to
-a common unit before comparing them.
 
-
-[w3c-mq]: http://www.w3.org/TR/css3-mediaqueries/
-[w3c-mq-features]: http://www.w3.org/TR/css3-mediaqueries/#media1
-[w3c-vu]: http://www.w3.org/TR/css3-values/
-
-
-License
+License & Acknowledgements
 -------
 
+This project is a fork of [css-mediaquery](https://www.npmjs.com/package/css-mediaquery).
 This software is free to use under the Yahoo! Inc. BSD license.
-See the [LICENSE file][] for license text and copyright information.
-
-
-[LICENSE file]: https://github.com/cvrebert/css-mq-parser/blob/master/LICENSE
+See the [LICENSE file](https://github.com/cvrebert/css-mq-parser/blob/master/LICENSE) for license text and copyright information.
