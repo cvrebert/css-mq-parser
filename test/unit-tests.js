@@ -1,24 +1,25 @@
+/*eslint-env node */
+/*eslint no-unused-expressions:0 */
 /* global describe, it */
+/*jshint -W030 */
 
-'use strict';
-
-var expect     = require('chai').expect,
-    mediaQuery = require('../');
+var expect = require('chai').expect;
+var mediaQuery = require('../');
 
 describe('mediaQuery.parse()', function () {
     it('should parse media queries without expressions', function () {
         expect(mediaQuery.parse('screen')).to.eql([
             {
-                inverse    : false,
-                type       : 'screen',
+                inverse: false,
+                type: 'screen',
                 expressions: []
             }
         ]);
 
         expect(mediaQuery.parse('not screen')).to.eql([
             {
-                inverse    : true,
-                type       : 'screen',
+                inverse: true,
+                type: 'screen',
                 expressions: []
             }
         ]);
@@ -42,7 +43,9 @@ describe('mediaQuery.parse()', function () {
 
     it('should throw a SyntaxError when a media query is invalid', function () {
         function parse(query) {
-            return function () { mediaQuery.parse(query); };
+            return function () {
+                mediaQuery.parse(query);
+            };
         }
 
         expect(parse('some crap')).to.throw(SyntaxError);

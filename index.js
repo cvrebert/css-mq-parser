@@ -3,18 +3,13 @@ Copyright (c) 2014, Yahoo! Inc. All rights reserved.
 Copyrights licensed under the New BSD License.
 See the accompanying LICENSE file for terms.
 */
+/*eslint-env node */
 
-'use strict';
+var RE_MEDIA_QUERY = /^(?:(only|not)?\s*([_a-z][_a-z0-9-]*)|(\([^\)]+\)))(?:\s*and\s*(.*))?$/i;
+var RE_MQ_EXPRESSION = /^\(\s*([_a-z-][_a-z0-9-]*)\s*(?:\:\s*([^\)]+))?\s*\)$/;
+var RE_MQ_FEATURE = /^(?:(min|max)-)?(.+)/;
 
-exports.parse = parseQuery;
-
-// -----------------------------------------------------------------------------
-
-var RE_MEDIA_QUERY     = /^(?:(only|not)?\s*([_a-z][_a-z0-9-]*)|(\([^\)]+\)))(?:\s*and\s*(.*))?$/i,
-    RE_MQ_EXPRESSION   = /^\(\s*([_a-z-][_a-z0-9-]*)\s*(?:\:\s*([^\)]+))?\s*\)$/,
-    RE_MQ_FEATURE      = /^(?:(min|max)-)?(.+)/;
-
-function parseQuery(mediaQuery) {
+exports.parse = function parseQuery(mediaQuery) {
     return mediaQuery.split(',').map(function (query) {
         query = query.trim();
 
@@ -25,13 +20,13 @@ function parseQuery(mediaQuery) {
             throw new SyntaxError('Invalid CSS media query: "' + query + '"');
         }
 
-        var modifier    = captures[1],
-            type        = captures[2],
-            expressions = ((captures[3] || '') + (captures[4] || '')).trim(),
-            parsed      = {};
+        var modifier = captures[1];
+        var type = captures[2];
+        var expressions = ((captures[3] || '') + (captures[4] || '')).trim();
+        var parsed = {};
 
         parsed.inverse = !!modifier && modifier.toLowerCase() === 'not';
-        parsed.type    = type ? type.toLowerCase() : 'all';
+        parsed.type = type ? type.toLowerCase() : 'all';
 
         // Check for media query expressions.
         if (!expressions) {
@@ -48,22 +43,22 @@ function parseQuery(mediaQuery) {
         }
 
         parsed.expressions = expressions.map(function (expression) {
-            var captures = expression.match(RE_MQ_EXPRESSION);
+            var exprCaptures = expression.match(RE_MQ_EXPRESSION);
 
             // Media Query must be valid.
-            if (!captures) {
+            if (!exprCaptures) {
                 throw new SyntaxError('Invalid CSS media query: "' + query + '"');
             }
 
-            var feature = captures[1].toLowerCase().match(RE_MQ_FEATURE);
+            var feature = exprCaptures[1].toLowerCase().match(RE_MQ_FEATURE);
 
             return {
                 modifier: feature[1],
-                feature : feature[2],
-                value   : captures[2]
+                feature: feature[2],
+                value: exprCaptures[2]
             };
         });
 
         return parsed;
     });
-}
+};
