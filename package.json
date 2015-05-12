@@ -1,6 +1,6 @@
 {
   "name": "css-mq-parser",
-  "version": "0.1.2",
+  "version": "0.0.1",
   "description": "Parses CSS media queries",
   "main": "index.js",
   "scripts": {
