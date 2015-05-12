@@ -1,14 +1,14 @@
 {
-  "name": "css-mediaquery",
+  "name": "css-mq-parser",
   "version": "0.1.2",
-  "description": "Parses and determines if a given CSS Media Query matches a set of values.",
+  "description": "Parses CSS media queries",
   "main": "index.js",
   "scripts": {
     "test": "istanbul cover -- ./node_modules/mocha/bin/_mocha test/ --reporter spec"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ericf/css-mediaquery.git"
+    "url": "git://github.com/cvrebert/css-mq-parser.git"
   },
   "keywords": [
     "css",
@@ -26,9 +26,9 @@
   ],
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/ericf/css-mediaquery/issues"
+    "url": "https://github.com/cvrebert/css-mq-parser/issues"
   },
-  "homepage": "https://github.com/ericf/css-mediaquery",
+  "homepage": "https://github.com/cvrebert/css-mq-parser",
   "devDependencies": {
     "mocha": "~1.16.2",
     "chai": "~1.8.1",

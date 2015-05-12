@@ -1,9 +1,9 @@
 CSS Media Query
 ===============
 
-[![Build Status](https://travis-ci.org/ericf/css-mediaquery.png?branch=master)](https://travis-ci.org/ericf/css-mediaquery)
-[![Dependency Status](https://gemnasium.com/ericf/css-mediaquery.png)](https://gemnasium.com/ericf/css-mediaquery)
-[![npm Version](https://badge.fury.io/js/css-mediaquery.png)](https://npmjs.org/package/css-mediaquery)
+[![Build Status](https://travis-ci.org/cvrebert/css-mq-parser.png?branch=master)](https://travis-ci.org/cvrebert/css-mq-parser)
+[![Dependency Status](https://gemnasium.com/cvrebert/css-mq-parser.png)](https://gemnasium.com/cvrebert/css-mq-parser)
+[![npm Version](https://badge.fury.io/js/css-mq-parser.png)](https://npmjs.org/package/css-mq-parser)
 
 Parses and determines if a given CSS Media Query matches a set of values via
 JavaScript.
@@ -14,7 +14,7 @@ Installation
 Install via npm:
 
 ```shell
-$ npm install css-mediaquery
+$ npm install css-mq-parser
 ```
 
 Usage
@@ -29,7 +29,7 @@ The `match()` method lets you compare a media query expression with a JavaScript
 object and determine if a media query matches a given set of values.
 
 ```javascript
-var mediaQuery = require('css-mediaquery');
+var mediaQuery = require('css-mq-parser');
 
 var isMatch = mediaQuery.match('screen and (min-width: 40em)', {
     type : 'screen',
@@ -46,11 +46,11 @@ specified, and it can _not_ be `"all"`.
 ### Parsing
 
 Existing CSS Parsers don't do a great job at parsing the details of media
-queries. That's where `css-mediaquery` shines. You can parse a media query
+queries. That's where `css-mq-parser` shines. You can parse a media query
 expression and get an AST back by using the `parse()` method.
 
 ```javascript
-var mediaQuery = require('css-mediaquery'),
+var mediaQuery = require('css-mq-parser'),
     ast        = mediaQuery.parse('screen and (min-width: 48em)');
 ```
 
@@ -91,4 +91,4 @@ This software is free to use under the Yahoo! Inc. BSD license.
 See the [LICENSE file][] for license text and copyright information.
 
 
-[LICENSE file]: https://github.com/ericf/css-mediaquery/blob/master/LICENSE
+[LICENSE file]: https://github.com/cvrebert/css-mq-parser/blob/master/LICENSE
