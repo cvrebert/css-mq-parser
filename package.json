@@ -20,8 +20,9 @@
     "parse",
     "match"
   ],
-  "author": "Eric Ferraiuolo <eferraiuolo@gmail.com>",
+  "author": "Chris Rebert <code@rebertia.com>",
   "contributors": [
+    "Eric Ferraiuolo <eferraiuolo@gmail.com>",
     "Tilo Mitra <tilomitra@gmail.com>"
   ],
   "license": "BSD",
