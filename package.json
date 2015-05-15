@@ -19,11 +19,7 @@
     "css",
     "media",
     "query",
-    "mediaquery",
-    "media-query",
-    "mobile",
-    "parse",
-    "match"
+    "parse"
   ],
   "author": "Chris Rebert <code@rebertia.com>",
   "contributors": [
