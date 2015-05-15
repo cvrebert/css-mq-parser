@@ -10,7 +10,7 @@ var RE_MEDIA_QUERY = /^(?:(only|not)?\s*(\\?\\0(?:\s*))?([_a-z][_a-z0-9-]*)(\\9?
 var RE_MQ_EXPRESSION = /^\(\s*([_a-z-][_a-z0-9-]*)\s*(?:\:\s*([^\)]+))?\s*\)$/;
 var RE_MQ_FEATURE = /^(?:(min|max)-)?(.+)/;
 
-exports.parse = function parseQuery(mediaQuery) {
+module.exports = function parseQuery(mediaQuery) {
     return mediaQuery.split(',').map(function (query) {
         query = query.trim();
 
