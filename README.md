@@ -19,8 +19,9 @@ $ npm install css-mq-parser
 Usage
 -----
 
-This package exports one function, which can parse CSS media
-query expressions and return an AST.
+This package exports one function, which can parse CSS media query expressions and return an AST.
+The parser tolerates several known CSS media query browser hacks, but will throw a `SyntaxError` if the media query expression is severely malformed.
+Note that this module implements a lax/liberal/non-validating parser; even modulo browser hacks, the fact that it parses a given expression successfully does not guarantee that the expression is valid per the relevant CSS specifications.
 
 ```javascript
 var parseMediaQuery = require('css-mq-parser');
@@ -51,5 +52,5 @@ License & Acknowledgements
 -------
 
 This project is a fork of [css-mediaquery](https://www.npmjs.com/package/css-mediaquery).
-This software is free to use under the Yahoo! Inc. BSD license.
+This software is free to use under the New/Revised BSD License.
 See the [LICENSE file](https://github.com/cvrebert/css-mq-parser/blob/master/LICENSE.txt) for license text and copyright information.
