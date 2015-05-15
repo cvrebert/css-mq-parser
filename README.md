@@ -1,9 +1,9 @@
 CSS Media Query Parser
 ===============
 
-[![Build Status](https://travis-ci.org/cvrebert/css-mq-parser.png?branch=master)](https://travis-ci.org/cvrebert/css-mq-parser)
+[![Build Status](https://img.shields.io/travis/cvrebert/css-mq-parser/master.svg)](https://travis-ci.org/cvrebert/css-mq-parser)
+[![npm version](https://img.shields.io/npm/v/css-mq-parser.svg)](https://www.npmjs.com/package/css-mq-parser)
 [![devDependency Status](https://img.shields.io/david/dev/cvrebert/css-mq-parser.svg)](https://david-dm.org/cvrebert/css-mq-parser#info=devDependencies)
-[![npm Version](https://badge.fury.io/js/css-mq-parser.png)](https://npmjs.org/package/css-mq-parser)
 
 Parses CSS media query expressions.
 
