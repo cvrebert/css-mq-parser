@@ -41,7 +41,22 @@ describe('mediaQuery.parse()', function () {
         expect(parsed[1].expressions[0].modifier).to.equal('min');
     });
 
-    it('should throw a SyntaxError when a media query is invalid', function () {
+    it('should parse media queries that use browser hacks', function () {
+        // http://browserhacks.com/#hack-a60b03e301a67f76a5a22221c739dc64
+        expect(mediaQuery.parse('screen and (min-width:0\\0)')).to.eql([
+            {
+                inverse: false,
+                type: 'screen',
+                expressions: [{
+                    modifier: 'min',
+                    feature: 'width',
+                    value: '0\\0'
+                }]
+            }
+        ]);
+    });
+
+    it('should throw a SyntaxError when a media query is completely invalid', function () {
         function parse(query) {
             return function () {
                 mediaQuery.parse(query);
