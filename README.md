@@ -29,8 +29,8 @@ queries. That's where `css-mq-parser` shines. You can parse a media query
 expression and get an AST back by using the `parse()` method.
 
 ```javascript
-var mediaQuery = require('css-mq-parser'),
-    ast        = mediaQuery.parse('screen and (min-width: 48em)');
+var mediaQuery = require('css-mq-parser');
+var ast = mediaQuery.parse('screen and (min-width: 48em)');
 ```
 
 The `ast` variable will have the following payload:
