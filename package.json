@@ -38,7 +38,7 @@
   "devDependencies": {
     "chai": "^2.3.0",
     "eslint": "^0.21.0",
-    "istanbul": "^0.2.3",
+    "istanbul": "^0.3.14",
     "jscs": "^1.13.1",
     "jscs-jsdoc": "^1.0.1",
     "jshint": "^2.7.0",
