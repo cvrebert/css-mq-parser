@@ -46,6 +46,21 @@ describe('mediaQuery.parse()', function () {
     });
 
     it('should parse media queries that use browser hacks', function () {
+        // http://browserhacks.com/#hack-36e9719b0244c5806423ca3c8ce02bdc
+        expect(mediaQuery.parse('all and (min-resolution: 3e1dpcm)')).to.eql([
+            {
+                inverse: false,
+                preTypeHack: '',
+                type: 'all',
+                postTypeHack: '',
+                expressions: [{
+                    modifier: 'min',
+                    feature: 'resolution',
+                    value: '3e1dpcm'
+                }]
+            }
+        ]);
+
         // http://browserhacks.com/#hack-a60b03e301a67f76a5a22221c739dc64
         expect(mediaQuery.parse('screen and (min-width:0\\0)')).to.eql([
             {
