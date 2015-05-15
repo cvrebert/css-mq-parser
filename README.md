@@ -19,18 +19,12 @@ $ npm install css-mq-parser
 Usage
 -----
 
-This package has one export: `parse()`, which can parse CSS media
-query expressions.
-
-### Parsing
-
-Existing CSS Parsers don't do a great job at parsing the details of media
-queries. That's where `css-mq-parser` shines. You can parse a media query
-expression and get an AST back by using the `parse()` method.
+This package exports one function, which can parse CSS media
+query expressions and return an AST.
 
 ```javascript
-var mediaQuery = require('css-mq-parser');
-var ast = mediaQuery.parse('screen and (min-width: 48em)');
+var parseMediaQuery = require('css-mq-parser');
+var ast = parseMediaQuery('screen and (min-width: 48em)');
 ```
 
 The `ast` variable will have the following payload:
