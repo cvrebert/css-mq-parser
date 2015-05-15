@@ -26,17 +26,18 @@ var ast = parseMediaQuery('screen and (min-width: 48em)');
 
 The `ast` variable will have the following payload:
 
-```javascript
+```json
 [
     {
-        inverse: false,
-        type   : 'screen',
-
-        expressions: [
+        "inverse": false,
+        "preTypeHack": "",
+        "type": "screen",
+        "postTypeHack": "",
+        "expressions": [
             {
-                modifier: 'min',
-                feature : 'width',
-                value   : '48em'
+                "modifier": "min",
+                "feature": "width",
+                "value": "48em"
             }
         ]
     }
