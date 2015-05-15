@@ -11,6 +11,7 @@ describe('mediaQuery.parse()', function () {
         expect(mediaQuery.parse('screen')).to.eql([
             {
                 inverse: false,
+                preTypeHack: '',
                 type: 'screen',
                 expressions: []
             }
@@ -19,6 +20,7 @@ describe('mediaQuery.parse()', function () {
         expect(mediaQuery.parse('not screen')).to.eql([
             {
                 inverse: true,
+                preTypeHack: '',
                 type: 'screen',
                 expressions: []
             }
@@ -46,12 +48,23 @@ describe('mediaQuery.parse()', function () {
         expect(mediaQuery.parse('screen and (min-width:0\\0)')).to.eql([
             {
                 inverse: false,
+                preTypeHack: '',
                 type: 'screen',
                 expressions: [{
                     modifier: 'min',
                     feature: 'width',
                     value: '0\\0'
                 }]
+            }
+        ]);
+
+        // http://browserhacks.com/#hack-411240e387db3ac5b87da57714e25d22
+        expect(mediaQuery.parse('\\0 all')).to.eql([
+            {
+                inverse: false,
+                preTypeHack: '\\0 ',
+                type: 'all',
+                expressions: []
             }
         ]);
     });
