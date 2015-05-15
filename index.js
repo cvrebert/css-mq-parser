@@ -23,10 +23,10 @@ exports.parse = function parseQuery(mediaQuery) {
         var modifier = captures[1];
         var type = captures[2];
         var expressions = ((captures[3] || '') + (captures[4] || '')).trim();
-        var parsed = {};
-
-        parsed.inverse = !!modifier && modifier.toLowerCase() === 'not';
-        parsed.type = type ? type.toLowerCase() : 'all';
+        var parsed = {
+            inverse: !!modifier && modifier.toLowerCase() === 'not',
+            type: type ? type.toLowerCase() : 'all'
+        };
 
         // Check for media query expressions.
         if (!expressions) {
