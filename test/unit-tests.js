@@ -119,6 +119,24 @@ describe('mediaQuery.parse()', function () {
                 expressions: []
             }
         ]);
+
+        // http://browserhacks.com/#hack-7e41bb4d3e33ad5da4d7d737b7bf3981
+        expect(mediaQuery.parse('\\0screen\\,screen\\9')).to.eql([
+            {
+                inverse: false,
+                preTypeHack: '\\0',
+                type: 'screen',
+                postTypeHack: '\\',
+                expressions: []
+            },
+            {
+                inverse: false,
+                preTypeHack: '',
+                type: 'screen',
+                postTypeHack: '\\9',
+                expressions: []
+            }
+        ]);
     });
 
     it('should throw a SyntaxError when a media query is completely invalid', function () {
