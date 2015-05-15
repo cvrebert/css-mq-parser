@@ -1,14 +1,11 @@
-CSS Media Query Parser
-===============
-
+# CSS Media Query Parser
 [![Build Status](https://img.shields.io/travis/cvrebert/css-mq-parser/master.svg)](https://travis-ci.org/cvrebert/css-mq-parser)
 [![npm version](https://img.shields.io/npm/v/css-mq-parser.svg)](https://www.npmjs.com/package/css-mq-parser)
 [![devDependency Status](https://img.shields.io/david/dev/cvrebert/css-mq-parser.svg)](https://david-dm.org/cvrebert/css-mq-parser#info=devDependencies)
 
 Parses CSS media query expressions.
 
-Installation
-------------
+## Installation
 
 Install via npm:
 
@@ -16,8 +13,7 @@ Install via npm:
 $ npm install css-mq-parser
 ```
 
-Usage
------
+## Usage
 
 This package exports one function, which can parse CSS media query expressions and return an AST.
 The parser tolerates several known CSS media query browser hacks, but will throw a `SyntaxError` if the media query expression is severely malformed.
@@ -48,8 +44,7 @@ The `ast` variable will have the following payload:
 ```
 
 
-License & Acknowledgements
--------
+## License & Acknowledgements
 
 This project is a fork of [css-mediaquery](https://www.npmjs.com/package/css-mediaquery).
 This software is free to use under the New/Revised BSD License.
