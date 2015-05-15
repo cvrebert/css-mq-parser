@@ -5,7 +5,7 @@ See the accompanying LICENSE file for terms.
 */
 /*eslint-env node */
 
-var RE_MEDIA_QUERY = /^(?:(only|not)?\s*([_a-z][_a-z0-9-]*)|(\([^\)]+\)))(?:\s*and\s*(.*))?$/i;
+var RE_MEDIA_QUERY = /^(?:(only|not)?\s*(\\?\\0(?:\s*))?([_a-z][_a-z0-9-]*)(\\9?)?|(\([^\)]+\)))(?:\s*and\s*(.*))?$/i;
 var RE_MQ_EXPRESSION = /^\(\s*([_a-z-][_a-z0-9-]*)\s*(?:\:\s*([^\)]+))?\s*\)$/;
 var RE_MQ_FEATURE = /^(?:(min|max)-)?(.+)/;
 
@@ -21,10 +21,12 @@ exports.parse = function parseQuery(mediaQuery) {
         }
 
         var modifier = captures[1];
-        var type = captures[2];
-        var expressions = ((captures[3] || '') + (captures[4] || '')).trim();
+        var type = captures[3];
+        var expressions = ((captures[5] || '') + (captures[6] || '')).trim();
         var parsed = {
             inverse: !!modifier && modifier.toLowerCase() === 'not',
+            preTypeHack: captures[2] || '',
+            postTypeHack: captures[4] || '',
             type: type ? type.toLowerCase() : 'all'
         };
 
