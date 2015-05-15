@@ -36,12 +36,12 @@
   },
   "homepage": "https://github.com/cvrebert/css-mq-parser",
   "devDependencies": {
-    "chai": "~1.8.1",
+    "chai": "^1.8.1",
     "eslint": "^0.21.0",
-    "istanbul": "~0.2.3",
+    "istanbul": "^0.2.3",
     "jscs": "^1.13.1",
     "jscs-jsdoc": "^1.0.1",
     "jshint": "^2.7.0",
-    "mocha": "~1.16.2"
+    "mocha": "^1.16.2"
   }
 }
