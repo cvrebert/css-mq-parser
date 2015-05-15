@@ -13,6 +13,7 @@ describe('mediaQuery.parse()', function () {
                 inverse: false,
                 preTypeHack: '',
                 type: 'screen',
+                postTypeHack: '',
                 expressions: []
             }
         ]);
@@ -22,6 +23,7 @@ describe('mediaQuery.parse()', function () {
                 inverse: true,
                 preTypeHack: '',
                 type: 'screen',
+                postTypeHack: '',
                 expressions: []
             }
         ]);
@@ -50,6 +52,7 @@ describe('mediaQuery.parse()', function () {
                 inverse: false,
                 preTypeHack: '',
                 type: 'screen',
+                postTypeHack: '',
                 expressions: [{
                     modifier: 'min',
                     feature: 'width',
@@ -64,6 +67,7 @@ describe('mediaQuery.parse()', function () {
                 inverse: false,
                 preTypeHack: '\\0 ',
                 type: 'all',
+                postTypeHack: '',
                 expressions: []
             }
         ]);
@@ -74,6 +78,18 @@ describe('mediaQuery.parse()', function () {
                 inverse: false,
                 preTypeHack: '\\\\0 ',
                 type: 'screen',
+                postTypeHack: '',
+                expressions: []
+            }
+        ]);
+
+        // http://browserhacks.com/#hack-6615a4a5434dc55fc1c01736edb32cb7
+        expect(mediaQuery.parse('screen\\9')).to.eql([
+            {
+                inverse: false,
+                preTypeHack: '',
+                type: 'screen',
+                postTypeHack: '\\9',
                 expressions: []
             }
         ]);
