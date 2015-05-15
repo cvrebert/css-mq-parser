@@ -4,7 +4,7 @@
   "description": "Parses CSS media queries",
   "main": "index.js",
   "scripts": {
-    "unit": "istanbul cover -- ./node_modules/mocha/bin/_mocha test/ --reporter spec",
+    "unit": "istanbul cover -- ./node_modules/.bin/mocha test/ --reporter spec",
     "eslint": "eslint *.js test/",
     "jshint": "jshint *.js test/",
     "jscs": "jscs *.js test/",
