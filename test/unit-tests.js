@@ -87,6 +87,17 @@ describe('mediaQuery.parse()', function () {
             }
         ]);
 
+        // http://browserhacks.com/#hack-c9242a5ec3f073257e275102be15d95f
+        expect(mediaQuery.parse('\\0screen')).to.eql([
+            {
+                inverse: false,
+                preTypeHack: '\\0',
+                type: 'screen',
+                postTypeHack: '',
+                expressions: []
+            }
+        ]);
+
         // http://browserhacks.com/#hack-a13653e3599eb6e6c11ba7f1a859193e
         expect(mediaQuery.parse('\\\\0 screen')).to.eql([
             {
