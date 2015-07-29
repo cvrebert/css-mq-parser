@@ -3,9 +3,12 @@
   "disallowKeywords": ["with"],
   "disallowMixedSpacesAndTabs": true,
   "disallowMultipleLineStrings": true,
+  "disallowMultipleSpaces": true,
   "disallowMultipleVarDecl": true,
   "disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-", "~", "!"],
+  "disallowSpaceBeforeComma": true,
   "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
+  "disallowSpaceBeforeSemicolon": true,
   "disallowSpacesInCallExpression": true,
   "disallowSpacesInsideBrackets": true,
   "disallowTrailingWhitespace": true,
@@ -15,6 +18,7 @@
   "requireLineFeedAtFileEnd": true,
   "requireOperatorBeforeLineBreak": ["+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", "<", ">=", "<="],
   "requireParenthesesAroundIIFE": true,
+  "requireSemicolons": true,
   "requireSpaceAfterBinaryOperators": ["+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", "<", ">=", "<="],
   "requireSpaceAfterKeywords": ["if", "else", "for", "while", "do", "switch", "return", "try", "catch"],
   "requireSpaceBeforeBinaryOperators": ["+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", "<", ">=", "<="],
@@ -23,6 +27,7 @@
   "requireSpacesInForStatement": true,
   "validateIndentation": 4,
   "validateLineBreaks": "LF",
+  "validateNewlineAfterArrayElements": true,
   "validateParameterSeparator": ", ",
   "plugins": [
     "jscs-jsdoc"
