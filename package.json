@@ -38,8 +38,8 @@
     "coveralls": "^2.11.2",
     "eslint": "^0.24.1",
     "istanbul": "^0.3.14",
-    "jscs": "^1.13.1",
-    "jscs-jsdoc": "^1.0.1",
+    "jscs": "^2.0.0",
+    "jscs-jsdoc": "^1.1.0",
     "jshint": "^2.7.0",
     "mocha": "^2.2.5",
     "mocha-lcov-reporter": "^0.0.2"
