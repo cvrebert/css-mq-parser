@@ -28,7 +28,7 @@
     "Eric Ferraiuolo <eferraiuolo@gmail.com>",
     "Tilo Mitra <tilomitra@gmail.com>"
   ],
-  "license": "BSD",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/cvrebert/css-mq-parser/issues"
   },
