@@ -1,5 +1,5 @@
 /* eslint-env node */
-/* eslint no-unused-expressions:0 */
+/* eslint no-unused-expressions:0, require-jsdoc:0 */
 /* global describe, it */
 /* jshint -W030 */
 
