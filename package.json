@@ -42,6 +42,6 @@
     "jscs-jsdoc": "^1.0.1",
     "jshint": "^2.7.0",
     "mocha": "^2.2.5",
-    "mocha-lcov-reporter": "^0.0.2"
+    "mocha-lcov-reporter": "^1.0.0"
   }
 }
