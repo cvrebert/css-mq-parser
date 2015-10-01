@@ -53,11 +53,13 @@ describe('parseQuery()', function () {
                 preTypeHack: '',
                 type: 'all',
                 postTypeHack: '',
-                expressions: [{
-                    modifier: 'min',
-                    feature: 'resolution',
-                    value: '3e1dpcm'
-                }]
+                expressions: [
+                    {
+                        modifier: 'min',
+                        feature: 'resolution',
+                        value: '3e1dpcm'
+                    }
+                ]
             }
         ]);
 
@@ -68,11 +70,13 @@ describe('parseQuery()', function () {
                 preTypeHack: '',
                 type: 'screen',
                 postTypeHack: '',
-                expressions: [{
-                    modifier: 'min',
-                    feature: 'width',
-                    value: '0\\0'
-                }]
+                expressions: [
+                    {
+                        modifier: 'min',
+                        feature: 'width',
+                        value: '0\\0'
+                    }
+                ]
             }
         ]);
 
