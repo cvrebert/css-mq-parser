@@ -1,7 +1,7 @@
-/*eslint-env node */
-/*eslint no-unused-expressions:0 */
+/* eslint-env node */
+/* eslint no-unused-expressions:0 */
 /* global describe, it */
-/*jshint -W030 */
+/* jshint -W030 */
 
 var expect = require('chai').expect;
 var parseMediaQuery = require('../');
