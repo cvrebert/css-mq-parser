@@ -1,10 +1,7 @@
 {
     "extends": "eslint:recommended",
     "env": {
-        "es6": true
-    },
-    "ecmaFeatures": {
-        "modules": true
+        "es2020": true
     },
     "rules": {
         "array-bracket-spacing": [2, "never"],
@@ -24,6 +21,7 @@
         "eol-last": 2,
         "eqeqeq": 2,
         "key-spacing": [2, {"beforeColon": false, "afterColon": true}],
+        "keyword-spacing": 2,
         "linebreak-style": [2, "unix"],
         "new-cap": 2,
         "new-parens": 2,
@@ -71,12 +69,9 @@
         "require-jsdoc": 2,
         "semi": [2, "always"],
         "semi-spacing": [2, {"before": false, "after": true}],
-        "space-after-keywords": [2, "always"],
         "space-before-blocks": [2, "always"],
         "space-before-function-paren": [2, {"anonymous": "always", "named": "never"}],
-        "space-before-keywords": [2, "always"],
         "space-in-parens": [2, "never"],
-        "space-return-throw-case": 2,
         "space-unary-ops": [2, {"words": true, "nonwords": false}],
         "spaced-comment": [2, "always"],
         "strict": [2, "global"],

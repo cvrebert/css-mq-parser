@@ -6,8 +6,10 @@ See the accompanying LICENSE file for terms.
 */
 /* eslint-env node */
 
-var RE_MEDIA_QUERY = /^(?:(only|not)?\s*(\\?\\0(?:\s*))?([_a-z][_a-z0-9-]*)(\\9?)?|(\([^\)]+\)))(?:\s*and\s*(.*))?$/i;
-var RE_MQ_EXPRESSION = /^\(\s*([_a-z-][_a-z0-9-]*)\s*(?:\:\s*([^\)]+))?\s*\)$/;
+'use strict';
+
+var RE_MEDIA_QUERY = /^(?:(only|not)?\s*(\\?\\0(?:\s*))?([_a-z][_a-z0-9-]*)(\\9?)?|(\([^)]+\)))(?:\s*and\s*(.*))?$/i;
+var RE_MQ_EXPRESSION = /^\(\s*([_a-z-][_a-z0-9-]*)\s*(?::\s*([^)]+))?\s*\)$/;
 var RE_MQ_FEATURE = /^(?:(min|max)-)?(.+)/;
 
 module.exports = function parseQuery(mediaQuery) {
@@ -38,7 +40,7 @@ module.exports = function parseQuery(mediaQuery) {
         }
 
         // Split expressions into a list.
-        expressions = expressions.match(/\([^\)]+\)/g);
+        expressions = expressions.match(/\([^)]+\)/g);
 
         // Media Query must be valid.
         if (!expressions) {
