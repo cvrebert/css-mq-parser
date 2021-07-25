@@ -1,7 +1,7 @@
 # Contributing
 
 ### Code style
-The project's coding style is laid out in the JSHint, ESLint, and JSCS configurations.
+The project's coding style is laid out in the JSHint and ESLint configurations.
 
 ### Chai unit tests
 The included [Chai-based](https://github.com/chaijs/chai) unit tests can be run via `npm run unit`.
