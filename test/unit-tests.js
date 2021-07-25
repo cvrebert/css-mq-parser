@@ -3,8 +3,10 @@
 /* global describe, it */
 /* jshint -W030 */
 
-var expect = require('chai').expect;
-var parseMediaQuery = require('../');
+'use strict';
+
+const expect = require('chai').expect;
+const parseMediaQuery = require('../');
 
 describe('parseQuery()', function () {
     it('should parse media queries without expressions', function () {
@@ -14,8 +16,8 @@ describe('parseQuery()', function () {
                 preTypeHack: '',
                 type: 'screen',
                 postTypeHack: '',
-                expressions: []
-            }
+                expressions: [],
+            },
         ]);
 
         expect(parseMediaQuery('not screen')).to.eql([
@@ -24,22 +26,22 @@ describe('parseQuery()', function () {
                 preTypeHack: '',
                 type: 'screen',
                 postTypeHack: '',
-                expressions: []
-            }
+                expressions: [],
+            },
         ]);
     });
 
     it('should parse common retina media query list', function () {
-        var parsed = parseMediaQuery(
+        const parsed = parseMediaQuery(
             'only screen and (-webkit-min-device-pixel-ratio: 2),\n' +
             'only screen and (   min--moz-device-pixel-ratio: 2),\n' +
             'only screen and (     -o-min-device-pixel-ratio: 2/1),\n' +
             'only screen and (        min-device-pixel-ratio: 2),\n' +
             'only screen and (                min-resolution: 192dpi),\n' +
-            'only screen and (                min-resolution: 2dppx)'
+            'only screen and (                min-resolution: 2dppx)',
         );
 
-        expect(parsed).to.be.an.array;
+        expect(parsed).to.be.an('array');
         expect(parsed).to.have.length(6);
         expect(parsed[0].expressions[0].feature).to.equal('-webkit-min-device-pixel-ratio');
         expect(parsed[1].expressions[0].modifier).to.equal('min');
@@ -57,10 +59,10 @@ describe('parseQuery()', function () {
                     {
                         modifier: 'min',
                         feature: 'resolution',
-                        value: '3e1dpcm'
-                    }
-                ]
-            }
+                        value: '3e1dpcm',
+                    },
+                ],
+            },
         ]);
 
         // http://browserhacks.com/#hack-a60b03e301a67f76a5a22221c739dc64
@@ -74,10 +76,10 @@ describe('parseQuery()', function () {
                     {
                         modifier: 'min',
                         feature: 'width',
-                        value: '0\\0'
-                    }
-                ]
-            }
+                        value: '0\\0',
+                    },
+                ],
+            },
         ]);
 
         // http://browserhacks.com/#hack-411240e387db3ac5b87da57714e25d22
@@ -87,8 +89,8 @@ describe('parseQuery()', function () {
                 preTypeHack: '\\0 ',
                 type: 'all',
                 postTypeHack: '',
-                expressions: []
-            }
+                expressions: [],
+            },
         ]);
 
         // http://browserhacks.com/#hack-c9242a5ec3f073257e275102be15d95f
@@ -98,8 +100,8 @@ describe('parseQuery()', function () {
                 preTypeHack: '\\0',
                 type: 'screen',
                 postTypeHack: '',
-                expressions: []
-            }
+                expressions: [],
+            },
         ]);
 
         // http://browserhacks.com/#hack-a13653e3599eb6e6c11ba7f1a859193e
@@ -109,8 +111,8 @@ describe('parseQuery()', function () {
                 preTypeHack: '\\\\0 ',
                 type: 'screen',
                 postTypeHack: '',
-                expressions: []
-            }
+                expressions: [],
+            },
         ]);
 
         // http://browserhacks.com/#hack-6615a4a5434dc55fc1c01736edb32cb7
@@ -120,8 +122,8 @@ describe('parseQuery()', function () {
                 preTypeHack: '',
                 type: 'screen',
                 postTypeHack: '\\9',
-                expressions: []
-            }
+                expressions: [],
+            },
         ]);
 
         // http://browserhacks.com/#hack-7e41bb4d3e33ad5da4d7d737b7bf3981
@@ -131,15 +133,15 @@ describe('parseQuery()', function () {
                 preTypeHack: '\\0',
                 type: 'screen',
                 postTypeHack: '\\',
-                expressions: []
+                expressions: [],
             },
             {
                 inverse: false,
                 preTypeHack: '',
                 type: 'screen',
                 postTypeHack: '\\9',
-                expressions: []
-            }
+                expressions: [],
+            },
         ]);
     });
 

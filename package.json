@@ -3,14 +3,14 @@
   "version": "0.0.3",
   "description": "Parses CSS media queries",
   "main": "index.js",
+  "files": [],
   "scripts": {
-    "unit": "mocha --reporter spec",
-    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha -- --reporter spec",
+    "unit": "mocha",
+    "coverage": "nyc --reporter=lcov --reporter=text-summary npm run unit",
     "coveralls": "coveralls",
     "eslint": "eslint *.js test/",
     "jshint": "jshint *.js test/",
-    "jscs": "jscs *.js test/",
-    "lint": "npm run jshint && npm run eslint && npm run jscs",
+    "lint": "npm run jshint && npm run eslint",
     "test": "npm run lint && npm run unit"
   },
   "repository": {
@@ -34,13 +34,11 @@
   },
   "homepage": "https://github.com/cvrebert/css-mq-parser",
   "devDependencies": {
-    "chai": "^3.2.0",
-    "coveralls": "^2.11.2",
-    "eslint": "^1.5.1",
-    "istanbul": "^0.3.14",
-    "jscs": "^2.2.1",
-    "jshint": "^2.7.0",
-    "mocha": "^2.2.5",
-    "mocha-lcov-reporter": "^1.0.0"
+    "chai": "^4.3.4",
+    "coveralls": "^3.1.1",
+    "eslint": "^7.31.0",
+    "jshint": "^2.13.0",
+    "mocha": "^9.0.2",
+    "nyc": "^15.1.0"
   }
 }

@@ -1,13 +1,13 @@
 # Contributing
 
 ### Code style
-The project's coding style is laid out in the JSHint, ESLint, and JSCS configurations.
+The project's coding style is laid out in the JSHint and ESLint configurations.
 
 ### Chai unit tests
 The included [Chai-based](https://github.com/chaijs/chai) unit tests can be run via `npm run unit`.
 
 ## Modifying the code
-First, ensure that you have the latest [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/) installed.
+First, ensure that you have the latest [Node.js](https://nodejs.org/) and [npm](https://npmjs.org/) installed.
 
 1. Fork and clone the repo.
 2. Run `npm install` to install all build dependencies.
