@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "description": "Parses CSS media queries",
   "main": "index.js",
+  "files": [],
   "scripts": {
     "unit": "mocha --reporter spec",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha -- --reporter spec",
