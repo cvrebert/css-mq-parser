@@ -5,8 +5,8 @@
   "main": "index.js",
   "files": [],
   "scripts": {
-    "unit": "mocha --reporter spec",
-    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha -- --reporter spec",
+    "unit": "mocha",
+    "coverage": "nyc --reporter=lcov --reporter=text-summary npm run unit",
     "coveralls": "coveralls",
     "eslint": "eslint *.js test/",
     "jshint": "jshint *.js test/",
@@ -35,11 +35,10 @@
   "homepage": "https://github.com/cvrebert/css-mq-parser",
   "devDependencies": {
     "chai": "^4.3.4",
-    "coveralls": "^2.11.2",
+    "coveralls": "^3.1.1",
     "eslint": "^7.31.0",
-    "istanbul": "^0.3.14",
     "jshint": "^2.13.0",
     "mocha": "^9.0.2",
-    "mocha-lcov-reporter": "^1.0.0"
+    "nyc": "^15.1.0"
   }
 }
