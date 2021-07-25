@@ -41,7 +41,7 @@ describe('parseQuery()', function () {
             'only screen and (                min-resolution: 2dppx)',
         );
 
-        expect(parsed).to.be.an.array;
+        expect(parsed).to.be.an('array');
         expect(parsed).to.have.length(6);
         expect(parsed[0].expressions[0].feature).to.equal('-webkit-min-device-pixel-ratio');
         expect(parsed[1].expressions[0].modifier).to.equal('min');
